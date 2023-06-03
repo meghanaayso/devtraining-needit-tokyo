@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_data_broker_transform">
+    <sys_ux_data_broker_transform action="INSERT_OR_UPDATE">
+        <acl_failure_result/>
+        <api_name>x_58872_needit.TLTransform</api_name>
+        <description/>
+        <mutates_server_data>false</mutates_server_data>
+        <name>TLTransform</name>
+        <output_schema/>
+        <private>false</private>
+        <props>[&#13;
+{&#13;
+  "name": "data",&#13;
+  "label": "data",&#13;
+  "description": "Planned Task GraphQL Data Result",&#13;
+  "readOnly": false,&#13;
+  "fieldType": "json",&#13;
+  "valueType": "object",&#13;
+  "mandatory": true&#13;
+}&#13;
+]</props>
+        <required_translations>[ {
+  "message" : "Planned Task GraphQL Data Result",
+  "comment" : ""
+}, {
+  "message" : "data",
+  "comment" : ""
+} ]</required_translations>
+        <schema_version>1.0.0</schema_version>
+        <script><![CDATA[function transform(input){
+	var returnArray = [];
+	var records = input.data;
+	
+	for (var i in records){
+		
+		//resultant object
+		var myObj = {}; // --> object 
+		
+		myObj.name = records[i].number.displayValue;
+		myObj.icon = "starFill";
+
+		
+		var events = []; // --> object
+		var eventsArray = {};
+		var popover={};
+		
+		var header={};
+		var footer={};
+		var fields=[];
+		var fieldsarray={};
+		//var popoverarray={};
+// 		//adding short description field to events array
+		eventsArray.description = records[i].short_description.displayValue;
+		
+// 		//adding tim field as due date
+		var startUTC = new GlideDateTime(records[i].due_date.value);
+		eventsArray.timestamp = startUTC.getNumericValue();
+		eventsArray.eventName=records[i].assigned_to.displayValue;
+		
+		
+		
+		header.label="Task";
+			//records[i].assigned_to.displayValue;
+		header.field="number";
+		//header.value="Freeform";
+		//records[i].assigned_to.displayValue;
+		
+		fieldsarray.label="Priority";
+			//records[i].assigned_to.displayValue;
+		fieldsarray.field="priority";
+			//records[i].assigned_to.displayValue;
+		fields.push(fieldsarray);
+		
+		
+		footer.label="Due";
+			//records[i].state.displayValue;
+		footer.field="due_date";
+		/*
+		"popover": {
+        "header": {
+            "label": "Task",
+            "field": "task_type",
+            "value": "Freeform"
+        },
+        "fields": [
+            {
+                "label": "Title",
+                "field": "title",
+                "payload" : {
+                    "route": "record",
+                    "table" :  "incident",
+                    "sys_id": "552c48888c033300964f4932b03eb092",
+                    "targetRoute":  "current"
+                }
+            },
+            {
+                "label": "Type",
+                "field": "type"
+            },
+            {
+                "label": "Completed",
+                "field": "completed"
+            }
+        ],
+        "footer": {
+            "label": "Due",
+            "field": "due_date"
+        }
+    }
+	*/
+		
+		popover.header=header;
+		popover.fields=fields;
+		popover.footer=footer;
+		eventsArray.popover=popover;
+
+		
+		events.push(eventsArray);
+		myObj.events = events;
+		
+		
+		
+		returnArray.push(myObj);
+	}
+	
+	return returnArray;
+}]]></script>
+        <sys_class_name>sys_ux_data_broker_transform</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-05-31 09:15:40</sys_created_on>
+        <sys_id>315dc68397072110a714bbe3a253af24</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>TLTransform</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_ux_data_broker_transform_315dc68397072110a714bbe3a253af24</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-06-03 14:22:45</sys_updated_on>
+    </sys_ux_data_broker_transform>
+    <sys_translated_text action="delete_multiple" query="documentkey=315dc68397072110a714bbe3a253af24"/>
+</record_update>

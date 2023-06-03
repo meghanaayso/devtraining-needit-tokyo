@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="DELETE">
+        <includes/>
+        <macroponent display_value="home default">2b5f9dc797432110a714bbe3a253af87</macroponent>
+        <name>timeline/formattedDisplayEndDate</name>
+        <preset/>
+        <required_translations>[ ]</required_translations>
+        <script><![CDATA[/**
+  * @param {params} params
+  * @param {api} params.api
+  * @param {TransformApiHelpers} params.helpers
+  */
+function evaluateProperty({api, helpers}) {
+  var datesJSONObj=api.data.get_dates_resource.results;
+
+  var lengthOfJSONObj=datesJSONObj.length;
+
+  //getting last record due date
+  var lastRecordDueDate=api.data.get_dates_resource.results[lengthOfJSONObj-1].due_date.value;
+
+	return lastRecordDueDate;
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-06-01 06:20:17</sys_created_on>
+        <sys_id>c96fe21f97432110a714bbe3a253afa9</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>timeline/formattedDisplayEndDate</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_ux_client_script_c96fe21f97432110a714bbe3a253afa9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-06-01 06:23:05</sys_updated_on>
+        <target>macroponent</target>
+        <type>transform</type>
+    </sys_ux_client_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>065c7a5fdb764c900b9d21c405961968</instance_id>
+        <instance_name>dev100416</instance_name>
+        <name>sys_ux_client_script_c96fe21f97432110a714bbe3a253afa9</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_ux_client_script"&gt;&lt;sys_ux_client_script action="INSERT_OR_UPDATE"&gt;&lt;includes/&gt;&lt;macroponent display_value="home default"&gt;2b5f9dc797432110a714bbe3a253af87&lt;/macroponent&gt;&lt;name&gt;timeline/formattedDisplayEndDate&lt;/name&gt;&lt;preset/&gt;&lt;required_translations&gt;[ ]&lt;/required_translations&gt;&lt;script&gt;&lt;![CDATA[/**
+  * @param {params} params
+  * @param {api} params.api
+  * @param {TransformApiHelpers} params.helpers
+  */
+function evaluateProperty({api, helpers}) {
+  var datesJSONObj=api.data.get_dates_resource.results;
+
+  var lengthOfJSONObj=datesJSONObj.length;
+
+  //getting last record due date
+  var lastRecordDueDate=api.data.get_dates_resource.results[lengthOfJSONObj-1].due_date.value;
+
+	return lastRecordDueDate;
+}]]&gt;&lt;/script&gt;&lt;script_api_version&gt;2.0.0&lt;/script_api_version&gt;&lt;sys_class_name&gt;sys_ux_client_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2023-06-01 06:20:17&lt;/sys_created_on&gt;&lt;sys_id&gt;c96fe21f97432110a714bbe3a253afa9&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;timeline/formattedDisplayEndDate&lt;/sys_name&gt;&lt;sys_package display_value="NeedIt" source="x_58872_needit"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="NeedIt"&gt;6ead8e780f603200cd674f8ce1050ed1&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_ux_client_script_c96fe21f97432110a714bbe3a253afa9&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2023-06-01 06:23:05&lt;/sys_updated_on&gt;&lt;target&gt;macroponent&lt;/target&gt;&lt;type&gt;transform&lt;/type&gt;&lt;/sys_ux_client_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1602554887</payload_hash>
+        <record_name>timeline/formattedDisplayEndDate</record_name>
+        <reverted_from/>
+        <source>5eb0fc09973221106616b066f053af45</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-06-01 06:23:05</sys_created_on>
+        <sys_id>c2007e1f97432110a714bbe3a253af3a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>188759fc7310000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-06-01 06:23:05</sys_updated_on>
+        <type>UX Client Script</type>
+        <update_guid>8a007e1f6b432110dcb4e2b9383f9c39</update_guid>
+        <update_guid_history>8a007e1f6b432110dcb4e2b9383f9c39:1602554887,8d6fe21f884321107b3ba31ec8fd09ac:-887165308</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-06-01 06:25:29</sys_created_on>
+        <sys_db_object display_value="" name="sys_ux_client_script">sys_ux_client_script</sys_db_object>
+        <sys_id>2cdc54e080e9488895bf30e018c08e90</sys_id>
+        <sys_metadata>c96fe21f97432110a714bbe3a253afa9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>timeline/formattedDisplayEndDate</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>sys_ux_client_script_c96fe21f97432110a714bbe3a253afa9</sys_update_name>
+        <sys_update_version display_value="sys_ux_client_script_c96fe21f97432110a714bbe3a253afa9">c2007e1f97432110a714bbe3a253af3a</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-06-01 06:25:29</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

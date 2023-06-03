@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <includes/>
+        <macroponent display_value="home default">2b5f9dc797432110a714bbe3a253af87</macroponent>
+        <name>stylized_text_3/text</name>
+        <preset/>
+        <required_translations>[ ]</required_translations>
+        <script><![CDATA[/**
+  * @param {params} params
+  * @param {api} params.api
+  * @param {TransformApiHelpers} params.helpers
+  */
+function evaluateProperty({api, helpers}) {
+	 var startTimestamp=api.state.starting_date;
+    var endTimestamp=api.state.ending_date;
+
+    //converting to string format
+
+    var startdate=new Date(startTimestamp);
+    var enddate=new Date(endTimestamp);
+var startyear=String(startdate.getFullYear());
+var startmonth=String((startdate.getMonth()+1));
+var startday=String(startdate.getDate());
+var starthours=String(startdate.getHours());
+var startminutes=String(startdate.getMinutes());
+var startseconds=String(startdate.getSeconds());
+
+
+if (startmonth.length< 2) 
+        startmonth = '0' + startmonth;
+    if (startday.length < 2) 
+        startday = '0' + startday;
+    if(starthours.length<2)
+      starthours='0'+starthours;
+    if(startminutes.length<2)
+      startminutes='0'+startminutes;
+    if(startseconds.length<2)
+      startseconds='0'+startseconds;
+
+var endyear=String(enddate.getFullYear());
+var endmonth=String((enddate.getMonth()+1));
+var endday=String(enddate.getDate());
+var endhours=String(enddate.getHours());
+var endminutes=String(enddate.getMinutes());
+var endseconds=String(enddate.getSeconds());
+
+
+if (endmonth.length< 2) 
+        endmonth = '0' + endmonth;
+    if (endday.length < 2) 
+        endday = '0' + endday;
+    if(endhours.length<2)
+      endhours='0'+endhours;
+    if(endminutes.length<2)
+        endminutes='0'+endminutes;
+    if(endseconds.length<2)
+      endseconds='0'+endseconds;
+// var str= dateFormat.getFullYear()+"-"+  
+//         month+"-"+
+//         day+" "+
+//            hours+":"+
+//            minutes+":"+
+//            seconds;
+
+// return str;
+
+    // QUERY TO FOLLOW --> "due_dateBETWEENjavascript:gs.dateGenerate('2023-06-01','00:00:00')@javascript:gs.dateGenerate('2023-06-30','23:59:59')";
+var queryfilter="due_dateBETWEENjavascript:gs.dateGenerate('"+startyear+"-"+startmonth+"-"+startday+"','"+starthours+":"+startminutes+":"+startseconds+"')@javascript:gs.dateGenerate('"+endyear+"-"+endmonth+"-"+endday+"','"+endhours+":"+endminutes+":"+endseconds+"')";
+
+return queryfilter;
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-06-03 13:19:00</sys_created_on>
+        <sys_id>5e62220c97572110a714bbe3a253afd2</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>stylized_text_3/text</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_ux_client_script_5e62220c97572110a714bbe3a253afd2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-06-03 13:21:14</sys_updated_on>
+        <target>macroponent</target>
+        <type>transform</type>
+    </sys_ux_client_script>
+</record_update>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <includes/>
+        <macroponent display_value="home default">2b5f9dc797432110a714bbe3a253af87</macroponent>
+        <name>timeline/formattedDisplayStartDate</name>
+        <preset/>
+        <required_translations/>
+        <script><![CDATA[function evaluateProperty({api, helpers}) {
+
+//subtracting one day from lower record
+var starttimestamp=api.data.tltransform_1.output[0].events[0].timestamp-86400000;
+
+
+
+  var dateFormat=new Date(starttimestamp);
+  var month=String((dateFormat.getMonth()+1));
+  var day=String(dateFormat.getDate());
+  var hours=String(dateFormat.getHours());
+  var minutes=String(dateFormat.getMinutes());
+  var seconds=String(dateFormat.getSeconds());
+if (month.length< 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+    if(hours.length<2)
+      hours='0'+hours;
+    if(minutes.length<2)
+      minutes='0'+minutes;
+    if(seconds.length<2)
+      seconds='0'+seconds;
+var str= dateFormat.getFullYear()+"-"+  
+        month+"-"+
+        day+" "+
+           hours+":"+
+           minutes+":"+
+           seconds;
+
+return str;
+
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-06-03 13:05:04</sys_created_on>
+        <sys_id>ce3f524897572110a714bbe3a253aff7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>timeline/formattedDisplayStartDate</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_ux_client_script_ce3f524897572110a714bbe3a253aff7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-06-03 13:05:04</sys_updated_on>
+        <target>macroponent</target>
+        <type>transform</type>
+    </sys_ux_client_script>
+</record_update>
